@@ -1,0 +1,50 @@
+// This code is based on the Adafruit Motor Shield library examples.
+
+#include <AFMotor.h>
+
+AF_DCMotor motorleft(1);
+AF_DCMotor motorright(4);
+
+void setup() {
+
+ motorleft.setSpeed(200);
+ motorright.setSpeed(200);
+ 
+ motorleft.run(RELEASE);
+ motorright.run(RELEASE);
+}
+
+void loop() {
+  uint8_t i;
+ 
+  
+  motorleft.run(FORWARD);
+  for (i=0; i<255; i++) {
+    motorleft.setSpeed(i);  
+    delay(10);
+ }
+ 
+
+  motorright.run(BACKWARD);
+  for (i=0; i<255; i++) {
+    motorright.setSpeed(i);  
+    delay(10);
+ }
+
+  motorleft.run(RELEASE);  
+  motorright.run(RELEASE);
+  delay(1000);
+}
+
+  motorright.run(FORWARD);
+  for (i=0; i<255; i++) {
+    motorright.setSpeed(i);  
+    delay(10);
+ }
+ 
+
+  motorleft.run(BACKWARD);
+  for (i=0; i<255; i++) {
+    motorleft.setSpeed(i);  
+    delay(10);
+ }
