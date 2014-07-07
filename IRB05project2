@@ -1,0 +1,27 @@
+
+int drc1 = 5;
+int pwm1 = 6;
+int drc2 = 10;
+int pwm2 = 11;
+
+void setup() {                
+  pinMode(drc1, OUTPUT);   
+  pinMode(pwm1, OUTPUT);
+  pinMode(drc2, OUTPUT);
+  pinMode(pwm2, OUTPUT);  
+}
+
+void loop() {
+  digitalWrite(drc1, HIGH); 
+    digitalWrite(pwm1, 100); 
+      digitalWrite(drc2, HIGH); 
+    digitalWrite(pwm2, 100); 
+  delay(1000);               
+
+  digitalWrite(drc1, LOW); 
+    digitalWrite(pwm1, 100); 
+      digitalWrite(drc2, LOW); 
+    digitalWrite(pwm2, 100); 
+
+  delay(1000);        
+}
